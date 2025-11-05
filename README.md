@@ -4,6 +4,7 @@ I really like get things automated so with help of ChatGPT I've created a few sc
 - Each script is documented at the top with inline comments
 - Copy-paste ready.
 
+If you have some scripts that you want to share with community feel free to create a pull request!
 
 
 ## Currently this repo includes
@@ -13,8 +14,9 @@ I really like get things automated so with help of ChatGPT I've created a few sc
 - Unit Spawner (simple unit population) - <b>to be removed</b>
 
 ## On my TODO list:
+- Upgrade `Spawn units` script to allow for array of units instead of single unit type
 - Try to experiment with vehicles mission behavior to handle fuel usage.
-- Validate/adjust slope handling for facility placement on steep terrain because I had location spawned on mountain slope.
+- Optionally look into slope handling for facility placement on steep terrain because I had location spawned on mountain slope.
 
 ## Currently working on:
 - Ships sailing from harbor to harbor.
