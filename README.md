@@ -1,2 +1,48 @@
-# CMO-Automation-Scripts
-My collection of automation scripts for CMO
+# Command: Modern Operations Automation Scripts
+
+I really like get things automated so with help of ChatGPT I've created a few scripts for `Command: Modern Operations (CMO)` that helps me set up basic things.
+- Each script is documented at the top with inline comments
+- Copy-paste ready.
+
+
+
+## Currently this repo includes
+- Scenario Setup (factions, relations, doctrines)
+- Random Facilities Clusters Spawner
+- Spawn units with waypoints (units + optional roaming missions)
+- Unit Spawner (simple unit population) - <b>to be removed</b>
+
+## On my TODO list:
+- Try to experiment with vehicles mission behavior to handle fuel usage.
+- Validate/adjust slope handling for facility placement on steep terrain because I had location spawned on mountain slope.
+
+## Currently working on:
+- Ships sailing from harbor to harbor.
+- Predefined convoys that constantly travels between locations
+
+### Scenario Setup
+Allows to quickly create a three simple factions with specific doctrines
+
+### Random Facilities Clusters Spawner
+This script will quickly populate given Longitude and Latiude range with group of defined facilities.
+After spawning it will enforce current EMCON on all facilities. 
+
+### Spawn units with waypoints
+Spawn `N` number of units randomly in given Longitude and Latiude range and optionally assign each a roaming/patrol mission.
+
+**Limitations / Notes**
+- Tested on land infantry units
+- Assigning a roaming mission to vehicles may lead to units get stuck when fuel is depleted
+
+### Unit Spawner
+Actually will be removed in the next iteration. Use the one above instead as it's upgraded version
+
+### How to use
+1. Edit the top of the chosen script and set:
+   - DBID(s) for units/facilities
+   - area bounds (lonMin, lonMax, latMin, latMax)
+   - counts (numUnits/numLocations) and other parameters
+2. In CMO paste script content into Lua Script Console (CTRL + SHIFT + C).
+4. Adjust parameters and repeat as needed.
+
+---

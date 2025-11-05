@@ -1,6 +1,6 @@
 -- ==========================================================
 --                  / ** Franklin24 ** /
--- Spawn units with waypoints: Populates given area with units and assign them missions to roam around
+-- Spawn units with waypoints: Populates given area with units and assign them mission to roam around
 -- ==========================================================
 
 -- Units
@@ -12,7 +12,7 @@ local numUnits = 40               -- how many units to spawn
 -- --  ** IMPORTANT ** -- --
 -- -- Only tested with infantry - if you use vehicles they will probably stop when fuel ends
 -- -- When I'll have more time I'll try to mitigate that problem
-local assignRoamingMission = true -- if true, assign wandering mission
+local assignRoamingMission = false -- if true, assign wandering mission
 local distanceBetweenRP = 40000
 local numberOfRP = 5
 
