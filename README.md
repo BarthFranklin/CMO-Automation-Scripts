@@ -11,7 +11,7 @@ If you have some scripts that you want to share with community feel free to crea
 - Scenario Setup (factions, relations, doctrines)
 - Random Facilities Clusters Spawner
 - Spawn units with waypoints (units + optional roaming missions)
-- Unit Spawner (simple unit population) - <b>to be removed</b>
+- Find Highest Elevation Point in the area (Adaptive Search) and place facility on top
 
 ## On my TODO list:
 - Upgrade `Spawn units` script to allow for array of units instead of single unit type
