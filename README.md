@@ -12,6 +12,7 @@ If you have some scripts that you want to share with community feel free to crea
 - Random Facilities Clusters Spawner
 - Spawn units with waypoints (units + optional roaming missions)
 - Find Highest Elevation Point in the area (Adaptive Search) and place facility on top
+- Fixed location spawner
 
 ## On my TODO list:
 - Upgrade `Spawn units` script to allow for array of units instead of single unit type
