@@ -97,8 +97,3 @@ local passive = 'Radar=Passive;Sonar=Passive;OECM=Passive'
 ScenEdit_SetEMCON('Side', bluSide, passive)
 ScenEdit_SetEMCON('Side', redSide, active)
 ScenEdit_SetEMCON('Side', neutralSide, active)
-
--- ==========================================================
--- Confirmation Message
--- ==========================================================
-ScenEdit_MsgBox("Scenario setup complete: factions created and doctrines applied.", 0)

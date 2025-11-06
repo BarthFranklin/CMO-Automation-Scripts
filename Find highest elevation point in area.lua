@@ -11,7 +11,9 @@ local facilityID = 1747 -- Facility DBID
 local sideName = 'BluFor' -- Side name
 local step = 0.05   -- ~5 km (0.01° ≈ 1.1 km at equator)
 
--- Safe numeric conversion (handles comma decimals)
+
+-- ==========================================================
+-- Helper: Safe numeric conversion (handles comma decimals)
 function toNumberSafe(value)
     if type(value) == "string" then
         value = value:gsub(",", ".")
@@ -19,20 +21,38 @@ function toNumberSafe(value)
     return tonumber(value)
 end
 
--- Safe elevation function (requires CMO v1147.27+)
+-- Helper: Safe elevation function (requires CMO v1147.27+)
 function GetElevation(lat, lon)
     local elev = World_GetElevation({latitude = lat, longitude = lon})
     if elev == nil then return 0 end
     return tonumber(elev)
 end
 
--- Retrieve reference points
+-- Helper: Retrieve reference points
 local rpList = ScenEdit_GetReferencePoints({ side=sideName, area = rpNames })
 if rpList == nil or #rpList < 1 then
     print("Error: Could not retrieve any reference points.")
     return
 end
 
+-- Helper: Function to perform elevation search
+function SearchArea(minLat, maxLat, minLon, maxLon, step)
+    local bestLat, bestLon, bestElev = minLat, minLon, -9999
+    for lat = minLat, maxLat, step do
+        for lon = minLon, maxLon, step do
+            local elev = GetElevation(lat, lon)
+            if elev > bestElev then
+                bestElev, bestLat, bestLon = elev, lat, lon
+            end
+        end
+    end
+    return bestLat, bestLon, bestElev
+end
+-- ==========================================================
+
+-- ==========================================================
+-- Actual script
+-- ==========================================================
 -- Extract numeric coordinates (locale-safe)
 local lats, lons = {}, {}
 print("=== Reference Points Retrieved ===")
@@ -74,20 +94,6 @@ end
 
 print(string.format("Search area limited to:\n  Lat: %.5f – %.5f\n  Lon: %.5f – %.5f",
     minLat, maxLat, minLon, maxLon))
-
--- Function to perform elevation search
-function SearchArea(minLat, maxLat, minLon, maxLon, step)
-    local bestLat, bestLon, bestElev = minLat, minLon, -9999
-    for lat = minLat, maxLat, step do
-        for lon = minLon, maxLon, step do
-            local elev = GetElevation(lat, lon)
-            if elev > bestElev then
-                bestElev, bestLat, bestLon = elev, lat, lon
-            end
-        end
-    end
-    return bestLat, bestLon, bestElev
-end
 
 -- Adaptive refinement search
 local bestLat, bestLon, bestElev = SearchArea(minLat, maxLat, minLon, maxLon, step)

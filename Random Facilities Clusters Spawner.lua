@@ -7,7 +7,9 @@
 -- -- -- Enforce use of ENCOM settings
 -- ==========================================================
 
--- === USER VARIABLES ===
+-- ==========================================================
+-- User Input
+-- ==========================================================
 -- Locations (each group will contain one of each facility ID below)
 local facilitiesIDs = {174, 4609, 1747, 455}  -- example array of facility DB IDs (in this case - City, Comms Center, Basic radar, Industry plant)
 local numLocations = 10                       -- how many location groups to spawn
@@ -22,9 +24,9 @@ local latMin = 30                      -- minimum latitude
 local latMax = 35                      -- maximum latitude
 
 
----------------------------------------------------------
+-- ==========================================================
 -- Helper: Move a coordinate (lat, lon) by distance (m) and bearing (°)
----------------------------------------------------------
+-- ==========================================================
 local function movePoint(lat, lon, bearing, distance_m)
     local R = 6371000  -- Earth radius in meters
     local latRad = math.rad(lat)
@@ -39,9 +41,9 @@ local function movePoint(lat, lon, bearing, distance_m)
     return math.deg(newLat), math.deg(newLon)
 end
 
----------------------------------------------------------
+-- ==========================================================
 -- LOCATION GROUP SPAWNING
----------------------------------------------------------
+-- ==========================================================
 print('--- Spawning location groups ---')
 local locSpawned = 0
 local attempts = 0
@@ -89,9 +91,9 @@ while locSpawned < numLocations and attempts < maxAttempts do
 end
 print('Location groups spawned: ' .. locSpawned)
 
----------------------------------------------------------
+-- ==========================================================
 -- RESET EMCON SETTINGS FOR ALL FACILITIES ON SIDE (FULL WRAPPER VERSION)
----------------------------------------------------------
+-- ==========================================================
 print('--- Resetting EMCON settings for side: ' .. sideName .. ' ---')
 
 local side = VP_GetSide({name = sideName})
