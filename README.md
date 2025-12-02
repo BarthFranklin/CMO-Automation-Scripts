@@ -20,12 +20,13 @@ If you have some scripts that you want to share with community feel free to crea
 - Try to experiment with vehicles mission behavior to handle fuel usage.
 - Optionally look into slope handling for facility placement on steep terrain because I had location spawned on mountain slope.
 
+## Scripts:
 ### Scenario Setup
 Allows to quickly create a three simple factions with specific doctrines
 
 ### Random Facilities Clusters Spawner
 This script will quickly populate given Longitude and Latiude range with group of defined facilities.
-After spawning it will enforce current EMCON on all facilities. 
+After spawning it will enforce current EMCON on all facilities.
 
 ### Spawn units with waypoints
 Spawn `N` number of units randomly in given Longitude and Latiude range and optionally assign each a roaming/patrol mission.
