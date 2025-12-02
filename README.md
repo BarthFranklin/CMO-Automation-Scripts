@@ -12,15 +12,12 @@ If you have some scripts that you want to share with community feel free to crea
 - Random Facilities Clusters Spawner
 - Spawn units with waypoints (units + optional roaming missions)
 - Find Highest Elevation Point in the area (Adaptive Search) and place facility on top
+- Copy reference points between sides
 
 ## On my TODO list:
 - Upgrade `Spawn units` script to allow for array of units instead of single unit type
 - Try to experiment with vehicles mission behavior to handle fuel usage.
 - Optionally look into slope handling for facility placement on steep terrain because I had location spawned on mountain slope.
-
-## Currently working on:
-- Ships sailing from harbor to harbor.
-- Predefined convoys that constantly travels between locations
 
 ### Scenario Setup
 Allows to quickly create a three simple factions with specific doctrines
@@ -36,8 +33,8 @@ Spawn `N` number of units randomly in given Longitude and Latiude range and opti
 - Tested on land infantry units
 - Assigning a roaming mission to vehicles may lead to units get stuck when fuel is depleted
 
-### Unit Spawner
-Actually will be removed in the next iteration. Use the one above instead as it's upgraded version
+### Copy reference points between sides
+- Useful when you want to define exactly same area for both sides
 
 ### How to use
 1. Edit the top of the chosen script and set:
