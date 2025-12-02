@@ -12,6 +12,7 @@ If you have some scripts that you want to share with community feel free to crea
 - Random Facilities Clusters Spawner
 - Spawn units with waypoints (units + optional roaming missions)
 - Find Highest Elevation Point in the area (Adaptive Search) and place facility on top
+- Fixed location spawner
 - Copy reference points between sides
 
 ## On my TODO list:
@@ -32,6 +33,9 @@ Spawn `N` number of units randomly in given Longitude and Latiude range and opti
 **Limitations / Notes**
 - Tested on land infantry units
 - Assigning a roaming mission to vehicles may lead to units get stuck when fuel is depleted
+
+### Fixed location spawner
+- You can provide a table with real locations coordinates and script will spawn facilities at each of them
 
 ### Copy reference points between sides
 - Useful when you want to define exactly same area for both sides
